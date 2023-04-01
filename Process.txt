@@ -1,0 +1,31 @@
+﻿--> Create a "ASP.NET CORE WEB API" project in visual studio(2022)
+--> install the below packages in nuget package manager
+		--> Microsoft.EntityFrameworkCore
+		--> Microsoft.EntityFrameworkCore.SqlServer
+		--> Microsoft.AspNetCore.Authentication.JwtBearer
+--> create two tables in sql server 2019(SSMS) namely
+		--> UserInfo (UserId,DisplayName,UserName,Email,Password,CreatedDate)
+		--> Student ( Id,FirstName,LastName,DateOfBirth,email,mobile,ProfileImageUrl,genderId)
+		 (Refer the models folder for more details about datatypes and table names)
+--> Insert the values into both the tables
+--> Create Models, dbcontext, interface, repository and controller (Already created in our project)
+--> Add your own connection string in appsettings.json
+--> After that add dbcontext in program.cs (already added)
+--> Run the application and test with postman whether the data is retrieving or not (https://localhost:7210/api/student)port number is may be differnt for you and it is get method
+--> If you are using my code it shows 401 unauthorised error because JWT tokem implementation is also implemented in my application otherwise you will get the data
+--> For Jwt implementation create a controller and add JWT key in appsettings.json and add services in program.cs (already implemented in our application)
+--> Now open postman and paste the link (https://localhost:7210/api/token) post medhod and in body in raw caange the type of text from text to json and paste ypur email and password 
+{
+    "Email":"admin@abc.com",
+    "Password":"$admin@2022"
+}
+--> Then click on send you will get bearer token copy the token
+--> Go to the (https://localhost:7210/api/student) in authorisation change type to  bearer token and paste the token and send 
+--> Now you will get the all students data.
+--> If you want to test in swagger first you try it out get token method while passing the values of email and password (for this you wil add Services.AddSwaggerGen() contetent in program.cs)
+--> Then there will be a autorize button click the authorize and type Bearer space token 
+		ex: Bearer eyhhjkdufgfhsdvfvdhjfvdfvdvfhdvfvdfvhdfvjhdvfdvfvdfvhdvfmsbndsmndsvjd
+--> Then you will get all the data in swagger
+
+
+																								vinay kayala
