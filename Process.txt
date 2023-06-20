@@ -28,4 +28,4 @@
 --> Then you will get all the data in swagger
 
 
-																								--vinay kayala
+																								                                                --vinay kayala
